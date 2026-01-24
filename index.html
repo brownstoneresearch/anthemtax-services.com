@@ -20,20 +20,23 @@
   <title>Tax Debt Relief Help | Free Consultation | Anthem Tax Services</title>
   <meta name="description" content="Need help with IRS or State tax debt? Get a free consultation with Anthem Tax Services. Clear steps, fast help, and professional support." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://anthemtaxservices.com" />
 
-  <!-- Open Graph -->
+  <!-- ✅ Only reference anthemtax-services.com for canonical + site urls -->
+  <link rel="canonical" href="https://anthemtax-services.com/" />
+
+  <!-- Open Graph (site URL = anthemtax-services.com; images can still come from anthemtaxservices.com) -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Anthem Tax Services" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tax Debt Relief Help | Free Consultation | Anthem Tax Services" />
   <meta property="og:description" content="Need help with IRS or State tax debt? Get a free consultation. Clear steps, fast help, and professional support." />
-  <meta property="og:url" content="https://anthemtaxservices.com" />
+  <meta property="og:url" content="https://anthemtax-services.com/" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tax Debt Relief Help | Free Consultation | Anthem Tax Services" />
   <meta name="twitter:description" content="Need help with IRS or State tax debt? Get a free consultation. Clear steps, fast help, and professional support." />
 
+  <!-- ✅ Images + favicon from anthemtaxservices.com -->
   <link rel="icon" href="https://anthemtaxservices.com/wp-content/uploads/2024/04/anthemtax.png" />
 
   <style>
@@ -45,13 +48,13 @@
       --nav2:#2d4059;
       --accent:#bb2222;
       --accent2:#e04a4a;
-      --card:#ffffff;
       --cardAlt:#f4f6fb;
       --radius:18px;
       --radius2:22px;
       --shadow: 0 16px 40px rgba(0,0,0,.12);
       --shadow2: 0 10px 26px rgba(0,0,0,.08);
       --focus: 0 0 0 4px rgba(187,34,34,.18);
+      --line: rgba(12,19,36,.10);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -69,139 +72,86 @@
     img{max-width:100%; height:auto}
     .wrap{width:min(1160px, 92vw); margin:0 auto}
 
-    .skip{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
+    /* Skip link */
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;}
     .skip:focus{
       left:16px; top:16px; width:auto; height:auto;
       background:#fff; padding:10px 12px; border-radius:12px; box-shadow:var(--shadow2);
-      z-index:9999;
-      outline:none;
+      z-index:9999; outline:none;
     }
 
+    /* Top strip */
     .banner{
       background:linear-gradient(90deg, var(--nav), var(--nav2));
       color:#fff;
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
       border-bottom:1px solid rgba(255,255,255,.10);
     }
     .banner .wrap{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:center;
-      padding:10px 0;
-      text-align:center;
-      flex-wrap:wrap;
+      display:flex; gap:10px; align-items:center; justify-content:center;
+      padding:10px 0; text-align:center; flex-wrap:wrap;
     }
-    .banner a{
-      color:#ffe6c2;
-      text-decoration:underline;
-      text-underline-offset:3px;
-    }
+    .banner a{color:#ffe6c2; text-decoration:underline; text-underline-offset:3px}
 
+    /* Header */
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
+      position:sticky; top:0; z-index:1000;
       backdrop-filter:saturate(160%) blur(10px);
       background:rgba(31,47,69,.92);
       border-bottom:1px solid rgba(255,255,255,.10);
     }
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      min-width:140px;
+      display:flex; align-items:center; gap:12px; text-decoration:none; min-width:140px;
     }
     .brand img{
-      width:132px;
-      height:auto;
-      display:block;
+      width:132px; height:auto; display:block;
       filter: drop-shadow(0 8px 18px rgba(0,0,0,.22));
     }
     .menu{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-      font-weight:700;
-      font-size:14px;
-      color:rgba(255,255,255,.92);
+      display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+      font-weight:800; font-size:14px; color:rgba(255,255,255,.92);
     }
     .menu a{
-      text-decoration:none;
-      padding:10px 12px;
-      border-radius:12px;
+      text-decoration:none; padding:10px 12px; border-radius:12px;
       transition:background .15s ease, transform .15s ease;
       outline:none;
     }
     .menu a:hover{background:rgba(255,255,255,.10)}
     .menu a:focus-visible{box-shadow:var(--focus)}
     .callbtn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      background:linear-gradient(180deg, var(--accent2), var(--accent));
-      color:#fff;
-      padding:12px 16px;
-      border-radius:999px;
-      font-weight:900;
-      letter-spacing:.2px;
-      border:1px solid rgba(255,255,255,.14);
+      display:inline-flex; align-items:center; gap:10px;
+      text-decoration:none; background:linear-gradient(180deg, var(--accent2), var(--accent));
+      color:#fff; padding:12px 16px; border-radius:999px;
+      font-weight:950; letter-spacing:.2px; border:1px solid rgba(255,255,255,.14);
       box-shadow:0 12px 30px rgba(187,34,34,.22);
-      white-space:nowrap;
-      outline:none;
+      white-space:nowrap; outline:none;
     }
     .callbtn:hover{transform:translateY(-1px)}
     .callbtn:focus-visible{box-shadow:var(--focus)}
     .hamburger{
-      display:none;
-      align-items:center;
-      justify-content:center;
-      width:44px;
-      height:44px;
-      border-radius:14px;
+      display:none; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      cursor:pointer;
-      outline:none;
+      background:rgba(255,255,255,.08); color:#fff;
+      cursor:pointer; outline:none;
     }
     .hamburger:focus-visible{box-shadow:var(--focus)}
-    .mobileMenu{
-      display:none;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-    .mobileMenu .wrap{
-      padding:10px 0 14px;
-      display:grid;
-      gap:8px;
-    }
+    .mobileMenu{display:none; border-top:1px solid rgba(255,255,255,.10)}
+    .mobileMenu .wrap{padding:10px 0 14px; display:grid; gap:8px}
     .mobileMenu a{
-      text-decoration:none;
-      padding:12px 12px;
-      border-radius:14px;
-      background:rgba(255,255,255,.06);
-      color:rgba(255,255,255,.92);
-      font-weight:800;
-      outline:none;
+      text-decoration:none; padding:12px 12px; border-radius:14px;
+      background:rgba(255,255,255,.06); color:rgba(255,255,255,.92);
+      font-weight:900; outline:none;
     }
     .mobileMenu a:focus-visible{box-shadow:var(--focus)}
 
+    /* Hero */
     .hero{
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
       background:
         radial-gradient(1200px 520px at 10% 10%, rgba(255,255,255,.16), transparent 60%),
         radial-gradient(900px 520px at 92% 18%, rgba(255,255,255,.12), transparent 60%),
@@ -209,41 +159,26 @@
       color:#fff;
     }
     .hero::before{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto -120px;
-      height:420px;
+      content:""; position:absolute; inset:-120px -120px auto -120px; height:420px;
       background:radial-gradient(closest-side, rgba(224,74,74,.20), transparent 70%);
       pointer-events:none;
     }
     .hero .wrap{
       position:relative;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:28px;
-      padding:54px 0 60px;
-      align-items:center;
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:28px;
+      padding:54px 0 38px; align-items:center;
     }
     .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(0,0,0,.10);
-      color:#ffe6c2;
-      font-weight:900;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      font-size:12px;
-      width:fit-content;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.16); background:rgba(0,0,0,.10);
+      color:#ffe6c2; font-weight:950; letter-spacing:.10em;
+      text-transform:uppercase; font-size:12px; width:fit-content;
     }
     h1{
       margin:14px 0 10px;
       font-size: clamp(34px, 3.6vw, 54px);
-      line-height:1.05;
-      letter-spacing:-.02em;
+      line-height:1.05; letter-spacing:-.02em;
     }
     .sub{
       margin:0 0 18px;
@@ -251,28 +186,14 @@
       color:rgba(255,255,255,.92);
       max-width:60ch;
     }
-    .ctaRow{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:16px;
-      align-items:center;
-    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; align-items:center;}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:900;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 18px; border-radius:999px;
+      text-decoration:none; font-weight:950;
       border:2px solid rgba(255,255,255,.12);
       transition:transform .15s ease, background .15s ease, opacity .15s ease;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
-      outline:none;
+      cursor:pointer; user-select:none; white-space:nowrap; outline:none;
     }
     .btn:focus-visible{box-shadow:var(--focus)}
     .btn.primary{ background:linear-gradient(180deg, var(--accent2), var(--accent)); color:#fff; box-shadow:0 14px 30px rgba(187,34,34,.22) }
@@ -283,25 +204,56 @@
     .btn.dark:hover{ opacity:.95 }
 
     .trustRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:18px;
-      opacity:.95;
-      align-items:center;
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;
+      opacity:.95; align-items:center;
     }
     .trustPill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:999px;
-      background:rgba(0,0,0,.10);
-      font-size:13px;
-      font-weight:800;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border:1px solid rgba(255,255,255,.16);
+      border-radius:999px; background:rgba(0,0,0,.10);
+      font-size:13px; font-weight:900;
     }
 
+    /* Hero badges row */
+    .badgeRow{
+      padding:18px 0 46px;
+    }
+    .badges{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:14px;
+      align-items:center;
+    }
+    .badge{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:18px;
+      padding:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:78px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.14);
+      backdrop-filter: blur(10px);
+    }
+    .badge img{max-height:52px; width:auto; opacity:.95; display:block}
+
+    /* Cards + sections */
+    .section{padding:70px 0}
+    .section.alt{background:var(--cardAlt)}
+    .section h2{
+      margin:0 0 10px;
+      font-size: clamp(26px, 2.6vw, 38px);
+      letter-spacing:-.02em;
+    }
+    .section p.lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:18px;
+      max-width:75ch;
+    }
+
+    /* Form card */
     .card{
       background:rgba(255,255,255,.09);
       border:1px solid rgba(255,255,255,.18);
@@ -315,7 +267,7 @@
     form{display:grid; gap:10px}
     .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
     .field{display:grid; gap:6px}
-    label{font-size:12px; font-weight:900; color:rgba(255,255,255,.92); letter-spacing:.02em}
+    label{font-size:12px; font-weight:950; color:rgba(255,255,255,.92); letter-spacing:.02em}
     input, select{
       width:100%;
       padding:12px 12px;
@@ -332,27 +284,20 @@
     option{color:#0c1324}
 
     .checkRow{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:10px 12px;
-      border-radius:14px;
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px; border-radius:14px;
       border:1px solid rgba(255,255,255,.16);
       background:rgba(0,0,0,.12);
     }
     .checkRow input{width:18px; height:18px; margin-top:2px}
     .small{font-size:11px; line-height:1.35; color:rgba(255,255,255,.92)}
     .small a{color:#cde3fd}
+
     .submit{
-      appearance:none;
-      border:0;
-      border-radius:16px;
-      padding:14px 16px;
-      font-weight:950;
-      letter-spacing:.02em;
+      appearance:none; border:0; border-radius:16px;
+      padding:14px 16px; font-weight:950; letter-spacing:.02em;
       background:linear-gradient(180deg, var(--accent2), var(--accent));
-      color:#fff;
-      cursor:pointer;
+      color:#fff; cursor:pointer;
       transition:transform .15s ease, opacity .15s ease;
       outline:none;
     }
@@ -360,11 +305,7 @@
     .submit:focus-visible{box-shadow:var(--focus)}
     .submit[disabled]{opacity:.6; cursor:not-allowed; transform:none}
 
-    .section{padding:70px 0}
-    .section.alt{background:var(--cardAlt)}
-    .section h2{margin:0 0 10px; font-size: clamp(26px, 2.6vw, 38px); letter-spacing:-.02em}
-    .section p.lead{margin:0 0 22px; color:var(--muted); font-size:18px; max-width:70ch}
-
+    /* Services grid */
     .services{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -378,20 +319,45 @@
       padding:18px;
       box-shadow:var(--shadow2);
       transition:transform .15s ease, box-shadow .15s ease;
+      position:relative;
+      overflow:hidden;
     }
     .svc:hover{transform:translateY(-2px)}
     .svc h3{margin:0 0 8px; font-size:18px}
     .svc p{margin:0 0 10px; color:var(--muted)}
     .svc a{
       display:inline-flex; gap:8px; align-items:center;
-      color:var(--accent);
-      font-weight:950;
-      text-decoration:none;
-      outline:none;
+      color:var(--accent); font-weight:950; text-decoration:none; outline:none;
     }
     .svc a:hover{text-decoration:underline}
     .svc a:focus-visible{box-shadow:var(--focus); border-radius:10px}
 
+    /* Feature split */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:26px;
+      align-items:center;
+      margin-top:20px;
+    }
+    .panel{
+      background:#fff;
+      border-radius:var(--radius2);
+      border:1px solid rgba(12,19,36,.08);
+      box-shadow:var(--shadow2);
+      overflow:hidden;
+    }
+    .panel img{display:block; width:100%; height:auto}
+    .quote{
+      background:linear-gradient(145deg, rgba(187,34,34,.10), rgba(45,64,89,.06));
+      border:1px solid rgba(12,19,36,.08);
+      border-radius:var(--radius2);
+      padding:20px;
+    }
+    .quote p{margin:0 0 12px; font-size:18px; color:#1b2336}
+    .quote strong{color:#0c1324}
+
+    /* Steps */
     .steps{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -418,47 +384,53 @@
     .step h3{margin:0 0 8px; font-size:18px}
     .step p{margin:0; color:var(--muted)}
 
-    .split{
+    /* Blog cards */
+    .blogGrid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:26px;
-      align-items:center;
-      margin-top:20px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:18px;
     }
-    .panel{
+    .post{
       background:#fff;
-      border-radius:var(--radius2);
       border:1px solid rgba(12,19,36,.08);
-      box-shadow:var(--shadow2);
+      border-radius:var(--radius2);
       overflow:hidden;
-    }
-    .quote{
-      background:linear-gradient(145deg, rgba(187,34,34,.10), rgba(45,64,89,.06));
-      border:1px solid rgba(12,19,36,.08);
-      border-radius:var(--radius2);
-      padding:20px;
-    }
-    .quote p{margin:0 0 12px; font-size:18px; color:#1b2336}
-    .quote strong{color:#0c1324}
-
-    details{
-      background:#fff;
-      border:1px solid rgba(12,19,36,.08);
-      border-radius:var(--radius2);
       box-shadow:var(--shadow2);
-      padding:14px 16px;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
     }
-    details summary{
-      cursor:pointer;
+    .post .thumb{
+      aspect-ratio: 5 / 3;
+      overflow:hidden;
+      border-bottom:1px solid rgba(12,19,36,.08);
+      background:#eef1f7;
+    }
+    .post .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .post .body{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .post h3{margin:0; font-size:16.5px; letter-spacing:-.01em}
+    .post p{margin:0; color:var(--muted)}
+    .post .meta{margin-top:auto; padding-top:6px; display:flex; justify-content:flex-start}
+    .post a.read{
+      color:var(--accent);
+      text-decoration:none;
       font-weight:950;
-      outline:none;
-      list-style:none;
     }
-    details summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0; color:var(--muted)}
-    details[open]{border-color: rgba(187,34,34,.18)}
-    .faqGrid{display:grid; gap:12px; margin-top:18px}
+    .post a.read:hover{text-decoration:underline}
 
+    /* Contact */
     .contact{
       background:linear-gradient(135deg, #1f2f45, #2d4059);
       color:#fff;
@@ -478,6 +450,7 @@
       margin:14px 0 10px;
     }
 
+    /* Footer */
     .footer{
       background:#101a2e;
       color:rgba(255,255,255,.86);
@@ -489,6 +462,7 @@
     .footlinks{font-size:13px; color:rgba(255,255,255,.80)}
     .footlinks a{color:#cde3fd}
 
+    /* Honeypot hidden */
     .hp { position:absolute !important; left:-10000px !important; top:auto !important; width:1px !important; height:1px !important; overflow:hidden !important; }
 
     /* Floating quick message button (no platform wording) */
@@ -527,26 +501,31 @@
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
-      .btn, .callbtn, .svc, .floatBtn{transition:none !important}
+      .btn, .callbtn, .svc, .floatBtn, .post{transition:none !important}
     }
+
     @media (max-width: 980px){
-      .hero .wrap{grid-template-columns:1fr; padding:44px 0 50px}
+      .hero .wrap{grid-template-columns:1fr; padding:44px 0 26px}
+      .badges{grid-template-columns:repeat(2,1fr)}
       .services{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr}
       .split{grid-template-columns:1fr}
+      .blogGrid{grid-template-columns:1fr}
       .contact .wrap{grid-template-columns:1fr}
       .menu{display:none}
       .hamburger{display:inline-flex}
       .brand img{width:122px}
+      .badgeRow{padding:16px 0 44px}
     }
   </style>
 
+  <!-- Schema (site URL uses anthemtax-services.com) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"Anthem Tax Services",
-    "url":"https://anthemtaxservices.com",
+    "url":"https://anthemtax-services.com/",
     "telephone":"+1-302-534-2829"
   }
   </script>
@@ -567,7 +546,8 @@
   <header class="topbar">
     <div class="wrap">
       <div class="nav">
-        <a class="brand" href="https://anthemtaxservices.com/" aria-label="Anthem Tax Services Home">
+        <!-- ✅ Link to anthemtax-services.com; logo image from anthemtaxservices.com -->
+        <a class="brand" href="https://anthemtax-services.com/" aria-label="Anthem Tax Services Home">
           <img src="https://anthemtaxservices.com/wp-content/uploads/2022/09/ats-logo-min.webp" alt="Anthem Tax Services" />
         </a>
 
@@ -575,7 +555,7 @@
           <a href="#services">Services</a>
           <a href="#process">Process</a>
           <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
+          <a href="#insights">Insights</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -591,7 +571,7 @@
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
+        <a href="#insights">Insights</a>
         <a href="#contact">Contact</a>
         <a href="#getstarted">Free Consultation Form</a>
       </div>
@@ -604,9 +584,9 @@
       <div class="wrap">
         <div>
           <div class="kicker">Top-rated tax debt relief team</div>
-          <h1>Clear Relief Options for IRS & State Tax Debt</h1>
+          <h1>Millions Saved in Back Taxes — Clear Relief Options</h1>
           <p class="sub">
-            Get peace of mind with a <strong>free consultation</strong>. We help reduce and resolve tax debts with clear next steps, steady communication, and professional support.
+            Get peace of mind with a <strong>free consultation</strong>. We help reduce and resolve IRS & State tax debts with clear next steps, steady communication, and professional support.
           </p>
 
           <div class="ctaRow">
@@ -622,12 +602,13 @@
           </div>
         </div>
 
-        <!-- FORM CARD (gform_1) -->
+        <!-- FORM CARD -->
         <div class="card" id="getstarted">
           <h3>Request Your Free Consultation</h3>
           <p>Submit your details and we’ll follow up shortly.</p>
 
           <form id="gform_1" method="post" novalidate>
+            <!-- Honeypot -->
             <div class="hp">
               <label for="input_1_30">Company</label>
               <input name="input_30" id="input_1_30" type="text" autocomplete="new-password" />
@@ -682,7 +663,7 @@
                 Message/data rates may apply. Opt out by replying “STOP”.
                 <br />
                 For more information, please visit
-                <a href="https://anthemtaxservices.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.
+                <a href="https://anthemtax-services.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.
               </div>
             </div>
 
@@ -698,44 +679,108 @@
           </div>
         </div>
       </div>
+
+      <!-- TRUST / BADGES (images from anthemtaxservices.com) -->
+      <div class="wrap badgeRow" aria-label="Trust and recognition">
+        <div class="badges">
+          <div class="badge">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/bbb.jpg" alt="BBB" loading="lazy" />
+          </div>
+          <div class="badge">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/Consumer-Affairs-Logo.png" alt="Consumer Affairs" loading="lazy" />
+          </div>
+          <div class="badge">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/f2647aad-e777-47aa-9b7a-4abe87b74259.png" alt="Consumers Advocate" loading="lazy" />
+          </div>
+          <div class="badge">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/quotes.png" alt="Reviews" loading="lazy" />
+          </div>
+          <div class="badge">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2022/09/anthem_tax_services_white_transparent-03-01.png" alt="Anthem Tax Services" loading="lazy" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SERVICES -->
     <section class="section alt" id="services">
       <div class="wrap">
-        <h2>Services Built for Real Tax Relief</h2>
-        <p class="lead">We focus on practical solutions that reduce pressure fast—then build a clear plan for resolution.</p>
+        <h2>Our Services</h2>
+        <p class="lead">
+          Our goal is to reduce clients’ tax debts to as little as possible. We understand how stressful it can feel when the IRS or State is applying pressure—so we focus on clear strategy, fast action, and steady communication.
+        </p>
 
         <div class="services">
           <div class="svc">
             <h3>Tax Relief</h3>
             <p>Structured strategy to reduce and resolve IRS or State tax debt.</p>
-            <a href="#" class="learnMore" data-service="Tax Relief" aria-label="Learn more about Tax Relief">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Tax Relief">Learn more →</a>
           </div>
+
           <div class="svc">
             <h3>Wage Garnishments</h3>
             <p>Stop aggressive collections and protect your paycheck.</p>
-            <a href="#" class="learnMore" data-service="Wage Garnishments" aria-label="Learn more about Wage Garnishments">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Wage Garnishments">Learn more →</a>
           </div>
+
           <div class="svc">
-            <h3>Installment Agreements</h3>
-            <p>Payment plans that reduce stress and restore stability.</p>
-            <a href="#" class="learnMore" data-service="Installment Agreements" aria-label="Learn more about Installment Agreements">Learn more →</a>
+            <h3>Installment Agreement</h3>
+            <p>Secure a payment plan and reduce pressure immediately.</p>
+            <a href="#" class="learnMore" data-service="Installment Agreement">Learn more →</a>
           </div>
+
           <div class="svc">
             <h3>Offer in Compromise</h3>
-            <p>Settle for less than you owe (when eligible).</p>
-            <a href="#" class="learnMore" data-service="Offer in Compromise" aria-label="Learn more about Offer in Compromise">Learn more →</a>
+            <p>Settle tax debt for less than you owe (when eligible).</p>
+            <a href="#" class="learnMore" data-service="Offer in Compromise">Learn more →</a>
           </div>
+
           <div class="svc">
             <h3>Penalty Abatement</h3>
-            <p>Remove penalties and get your balance under control.</p>
-            <a href="#" class="learnMore" data-service="Penalty Abatement" aria-label="Learn more about Penalty Abatement">Learn more →</a>
+            <p>Remove IRS penalties and improve your overall balance.</p>
+            <a href="#" class="learnMore" data-service="Penalty Abatement">Learn more →</a>
           </div>
+
           <div class="svc">
             <h3>Unfiled Returns</h3>
             <p>Catch up on filings and regain control of your situation.</p>
-            <a href="#" class="learnMore" data-service="Unfiled Returns" aria-label="Learn more about Unfiled Returns">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Unfiled Returns">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>Tax Levy</h3>
+            <p>Help stop seizures and enforcement actions when time is critical.</p>
+            <a href="#" class="learnMore" data-service="Tax Levy">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>Currently Not Collectible</h3>
+            <p>When qualified, pause collections and stabilize your position.</p>
+            <a href="#" class="learnMore" data-service="Currently Not Collectible">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>Tax Preparation</h3>
+            <p>Accurate filing support to keep you compliant and organized.</p>
+            <a href="#" class="learnMore" data-service="Tax Preparation">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>Corporate Tax Preparation</h3>
+            <p>Streamline business taxes and reduce compliance risk.</p>
+            <a href="#" class="learnMore" data-service="Corporate Tax Preparation">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>FOIA Requests</h3>
+            <p>Request records that can clarify status, balance, or history.</p>
+            <a href="#" class="learnMore" data-service="FOIA Request">Learn more →</a>
+          </div>
+
+          <div class="svc">
+            <h3>Fresh Start Solutions</h3>
+            <p>Explore relief pathways designed to reduce long-term burden.</p>
+            <a href="#" class="learnMore" data-service="Fresh Start Solutions">Learn more →</a>
           </div>
         </div>
       </div>
@@ -751,7 +796,7 @@
           <div class="step">
             <div class="num">01</div>
             <h3>Free Consultation</h3>
-            <p>Share your situation and goals. We identify the strongest relief options for you.</p>
+            <p>Share your situation and goals. We identify the strongest options available.</p>
           </div>
           <div class="step">
             <div class="num">02</div>
@@ -767,19 +812,21 @@
       </div>
     </section>
 
-    <!-- ABOUT + REVIEW -->
+    <!-- ABOUT -->
     <section class="section alt" id="about">
       <div class="wrap">
         <div class="split">
-          <div class="panel">
-            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/stressed-finances.jpg" alt="Stressed finances" />
+          <div class="panel" aria-label="About image">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/stressed-finances.jpg" alt="Stressed finances" loading="lazy" />
           </div>
 
           <div>
             <h2>To fight the battles that taxpayers shouldn’t.</h2>
-            <p class="lead">Built on trust, service, honesty, integrity, and education—so you always know the next best step.</p>
+            <p class="lead">
+              Built on trust, service, honesty, integrity, and education—so you always know the next best step.
+            </p>
 
-            <div class="quote" id="reviews">
+            <div class="quote" aria-label="Client testimonial">
               <p>“It took two years of negotiations, but it was worth it! We qualified for forgiveness of over <strong>$30,000</strong>. They kept us informed step by step.”</p>
               <strong>— Vilma L.</strong>
             </div>
@@ -787,38 +834,98 @@
             <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
               <a class="btn primary" href="#getstarted">Start Free Consultation</a>
               <a class="btn ghost" href="https://g.page/r/CXaND-Aof6GhEAE/review" target="_blank" rel="noopener">Read Reviews</a>
+              <a class="btn dark" href="https://anthemtax-services.com/about" target="_blank" rel="noopener">About Us</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
+    <!-- WHO WE ARE -->
+    <section class="section" id="whoweare">
       <div class="wrap">
-        <h2>Frequently Asked Questions</h2>
-        <p class="lead">Quick answers before you reach out. If you’re unsure, submit the form and we’ll guide you.</p>
+        <div class="split">
+          <div class="panel">
+            <img src="https://anthemtaxservices.com/wp-content/uploads/2024/11/anthem-tax-services-team-2024-1200x801-1.jpg" alt="Team" loading="lazy" />
+          </div>
+          <div>
+            <h2>Why choose Anthem Tax Services?</h2>
+            <p class="lead">
+              Our team is run by tax professionals with extensive combined experience across tax debt relief, tax preparation, and tax law.
+              We’ve built a process designed to improve clarity, communication, and outcomes—so clients can move forward with confidence.
+            </p>
+            <div class="steps" style="margin-top:10px">
+              <div class="step">
+                <div class="num">✓</div>
+                <h3>Clarity First</h3>
+                <p>We explain options in plain language and outline next steps before you commit.</p>
+              </div>
+              <div class="step">
+                <div class="num">✓</div>
+                <h3>Action-Driven</h3>
+                <p>Focused on practical progress—reducing pressure and moving toward resolution.</p>
+              </div>
+              <div class="step">
+                <div class="num">✓</div>
+                <h3>Client Updates</h3>
+                <p>Steady communication so you’re never left guessing what’s happening.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="faqGrid">
-          <details>
-            <summary>How fast can you respond after I submit?</summary>
-            <p>We typically respond as soon as possible during business hours.</p>
-          </details>
+    <!-- INSIGHTS -->
+    <section class="section alt" id="insights">
+      <div class="wrap">
+        <h2>Latest News & Insights</h2>
+        <p class="lead">Stay updated with tax tips, relief solutions, and essential insights.</p>
 
-          <details>
-            <summary>What should I prepare for the consultation?</summary>
-            <p>Your basic contact details and an estimate of what you owe. If you have notices/letters, that helps—but it’s not required to start.</p>
-          </details>
+        <div class="blogGrid">
+          <article class="post">
+            <div class="thumb">
+              <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/havent-filed-taxes-in-10-years.png" alt="Haven't filed taxes in 10 years" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>I haven’t filed taxes in 10 years or more; am I in trouble?</h3>
+              <p>What to expect and how to reduce risk when returns have been unfiled for years.</p>
+              <div class="meta">
+                <a class="read" href="https://anthemtax-services.com/blog/i-havent-filed-taxes-in-10-years-or-more-am-i-in-trouble" target="_blank" rel="noopener">Read more →</a>
+              </div>
+            </div>
+          </article>
 
-          <details>
-            <summary>Do you help with IRS and State tax debt?</summary>
-            <p>Yes—our services cover IRS and State tax-related issues, including garnishments, payment plans, relief options, and unfiled returns.</p>
-          </details>
+          <article class="post">
+            <div class="thumb">
+              <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/financial-aid-back-taxes.png" alt="Financial aid when you owe back taxes" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>How to Qualify for Financial Aid When You Owe Back Taxes</h3>
+              <p>Steps that can help improve eligibility when tax issues are impacting applications.</p>
+              <div class="meta">
+                <a class="read" href="https://anthemtax-services.com/blog/how-to-qualify-for-financial-aid-when-you-owe-back-taxes-to-the-irs" target="_blank" rel="noopener">Read more →</a>
+              </div>
+            </div>
+          </article>
 
-          <details>
-            <summary>Is the consultation free?</summary>
-            <p>Yes, the consultation is free. We’ll review your situation and outline next best steps.</p>
-          </details>
+          <article class="post">
+            <div class="thumb">
+              <img src="https://anthemtaxservices.com/wp-content/uploads/2024/12/irs_building-1024x683-1.png" alt="IRS building" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>What Are IRS Soft Letters?</h3>
+              <p>Understand soft notices, what they mean, and the smart next steps to take.</p>
+              <div class="meta">
+                <a class="read" href="https://anthemtax-services.com/blog/what-are-irs-soft-letters" target="_blank" rel="noopener">Read more →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn primary" href="#getstarted">Start Free Consultation</a>
+          <a class="btn ghost" href="https://anthemtax-services.com/blog" target="_blank" rel="noopener">View All Insights</a>
         </div>
       </div>
     </section>
@@ -829,15 +936,19 @@
         <div>
           <h2>We’re here to help</h2>
           <p>End your tax problems today with a free consultation.</p>
-          <p><strong>Call now:</strong> Monday to Friday : 9 am – 5 pm</p>
+          <p><strong>Hours:</strong> Monday to Friday : 9 am – 5 pm</p>
           <div class="bigPhone">
             <a href="tel:3025342829" style="text-decoration:none; color:#fff">(302) 534-2829</a>
           </div>
-          <p style="opacity:.92">Or submit the form and we’ll follow up quickly.</p>
+          <p style="opacity:.92">
+            Address: 21600 Oxnard St #1200 Woodland Hills, CA<br />
+            Email: <a href="mailto:info@anthemtaxservices.com" style="color:#cde3fd; text-decoration:none;">info@anthemtaxservices.com</a>
+          </p>
 
           <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
             <a class="btn primary" href="#getstarted">Start Free Consultation</a>
             <a class="btn ghost" href="tel:3025342829">Call Now</a>
+            <a class="btn dark learnMore" href="#" data-service="General Inquiry">Send a Message</a>
           </div>
         </div>
 
@@ -901,7 +1012,7 @@
                 Message/data rates may apply. Opt out by replying “STOP”.
                 <br />
                 More info:
-                <a href="https://anthemtaxservices.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                <a href="https://anthemtax-services.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
               </div>
             </div>
 
@@ -916,13 +1027,14 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footgrid">
         <img src="https://anthemtaxservices.com/wp-content/uploads/2022/09/anthem_tax_services_white_transparent-03-01.png" alt="Anthem Tax Services" />
         <div class="footlinks">
           2026 Anthem Tax Services<br />
-          <a href="/privacy-policy">Privacy Policy</a> |
+          <a href="https://anthemtax-services.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> |
           <a href="https://docs.anthemtaxes.net/CCPARequest.aspx" target="_blank" rel="noopener">Do Not Sell My Information</a> |
           <a href="https://www.oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener">CCPA</a>
         </div>
@@ -930,7 +1042,7 @@
     </div>
   </footer>
 
-  <!-- Floating Quick Action -->
+  <!-- Floating Quick Action (no platform wording) -->
   <div class="floatWrap" aria-label="Quick action">
     <a class="floatBtn" href="https://wa.me/13025342829" target="_blank" rel="noopener" aria-label="Send a message">
       <span class="dot" aria-hidden="true"></span>
@@ -938,10 +1050,14 @@
     </a>
   </div>
 
-  <!-- Submission + Smart Learn More Routing -->
+  <!-- ✅ Forms + Smart “Learn more” routing -->
   <script>
   (function () {
+    // Destination for message composer (behind-the-scenes)
     const DEST_NUMBER = "13025342829";
+
+    // For internal site references (non-image)
+    const SITE_URL = "https://anthemtax-services.com";
 
     // Mobile menu
     const hambtn = document.getElementById("hambtn");
@@ -960,6 +1076,7 @@
       }));
     }
 
+    // Phone formatting
     function formatPhone(v){
       const d = String(v||"").replace(/\D/g,'').slice(0,10);
       if (d.length <= 3) return d;
@@ -1023,10 +1140,10 @@
       if (phone) lines.push(`Phone: ${phone}`);
       if (owed) lines.push(`Estimated Tax Debt: ${owed}`);
       lines.push(`SMS Consent: ${consent ? "Yes" : "No"}`);
-
       lines.push("");
       lines.push("Context");
       lines.push(`Page: ${location.href}`);
+      lines.push(`Site: ${SITE_URL}`);
       lines.push(`Title: ${document.title}`);
       lines.push(`Time: ${new Date().toLocaleString()}`);
 
@@ -1046,6 +1163,7 @@
       lines.push("");
       lines.push("Context");
       lines.push(`Page: ${location.href}`);
+      lines.push(`Site: ${SITE_URL}`);
       lines.push(`Title: ${document.title}`);
       lines.push(`Time: ${new Date().toLocaleString()}`);
       const utmKeys = Object.keys(utm);
