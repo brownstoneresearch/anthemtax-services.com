@@ -47,8 +47,6 @@
       --accent2:#e04a4a;
       --card:#ffffff;
       --cardAlt:#f4f6fb;
-      --line:rgba(12,19,36,.10);
-      --line2:rgba(255,255,255,.14);
       --radius:18px;
       --radius2:22px;
       --shadow: 0 16px 40px rgba(0,0,0,.12);
@@ -384,7 +382,13 @@
     .svc:hover{transform:translateY(-2px)}
     .svc h3{margin:0 0 8px; font-size:18px}
     .svc p{margin:0 0 10px; color:var(--muted)}
-    .svc a{display:inline-flex; gap:8px; align-items:center; color:var(--accent); font-weight:950; text-decoration:none; outline:none}
+    .svc a{
+      display:inline-flex; gap:8px; align-items:center;
+      color:var(--accent);
+      font-weight:950;
+      text-decoration:none;
+      outline:none;
+    }
     .svc a:hover{text-decoration:underline}
     .svc a:focus-visible{box-shadow:var(--focus); border-radius:10px}
 
@@ -487,7 +491,7 @@
 
     .hp { position:absolute !important; left:-10000px !important; top:auto !important; width:1px !important; height:1px !important; overflow:hidden !important; }
 
-    /* Floating quick message button (no WhatsApp mention) */
+    /* Floating quick message button (no platform wording) */
     .floatWrap{
       position:fixed;
       right:18px;
@@ -577,7 +581,6 @@
 
         <div style="display:flex; gap:10px; align-items:center;">
           <a class="callbtn" href="tel:3025342829" aria-label="Call (302) 534-2829">(302) 534-2829</a>
-
           <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" id="hambtn">☰</button>
         </div>
       </div>
@@ -707,32 +710,32 @@
           <div class="svc">
             <h3>Tax Relief</h3>
             <p>Structured strategy to reduce and resolve IRS or State tax debt.</p>
-            <a href="https://anthemtaxservices.com/services/irs-tax-debt-relief/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Tax Relief" aria-label="Learn more about Tax Relief">Learn more →</a>
           </div>
           <div class="svc">
             <h3>Wage Garnishments</h3>
             <p>Stop aggressive collections and protect your paycheck.</p>
-            <a href="https://anthemtaxservices.com/services/stop-irs-wage-garnishment/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Wage Garnishments" aria-label="Learn more about Wage Garnishments">Learn more →</a>
           </div>
           <div class="svc">
             <h3>Installment Agreements</h3>
             <p>Payment plans that reduce stress and restore stability.</p>
-            <a href="https://anthemtaxservices.com/services/irs-installment-agreement-services/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Installment Agreements" aria-label="Learn more about Installment Agreements">Learn more →</a>
           </div>
           <div class="svc">
             <h3>Offer in Compromise</h3>
             <p>Settle for less than you owe (when eligible).</p>
-            <a href="https://anthemtaxservices.com/services/offer-in-compromise/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Offer in Compromise" aria-label="Learn more about Offer in Compromise">Learn more →</a>
           </div>
           <div class="svc">
             <h3>Penalty Abatement</h3>
             <p>Remove penalties and get your balance under control.</p>
-            <a href="https://anthemtaxservices.com/services/penalty-abatement/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Penalty Abatement" aria-label="Learn more about Penalty Abatement">Learn more →</a>
           </div>
           <div class="svc">
             <h3>Unfiled Returns</h3>
             <p>Catch up on filings and regain control of your situation.</p>
-            <a href="https://anthemtaxservices.com/services/unfiled-tax-returns/" target="_blank" rel="noopener">Learn more →</a>
+            <a href="#" class="learnMore" data-service="Unfiled Returns" aria-label="Learn more about Unfiled Returns">Learn more →</a>
           </div>
         </div>
       </div>
@@ -927,7 +930,7 @@
     </div>
   </footer>
 
-  <!-- Floating Quick Message Button -->
+  <!-- Floating Quick Action -->
   <div class="floatWrap" aria-label="Quick action">
     <a class="floatBtn" href="https://wa.me/13025342829" target="_blank" rel="noopener" aria-label="Send a message">
       <span class="dot" aria-hidden="true"></span>
@@ -935,11 +938,10 @@
     </a>
   </div>
 
-  <!-- ✅ Form submission -> opens message composer (no WhatsApp wording on page) -->
+  <!-- Submission + Smart Learn More Routing -->
   <script>
   (function () {
     const DEST_NUMBER = "13025342829";
-    const forms = Array.from(document.querySelectorAll("form[id^='gform_']"));
 
     // Mobile menu
     const hambtn = document.getElementById("hambtn");
@@ -958,7 +960,6 @@
       }));
     }
 
-    // Phone masking (simple)
     function formatPhone(v){
       const d = String(v||"").replace(/\D/g,'').slice(0,10);
       if (d.length <= 3) return d;
@@ -997,7 +998,12 @@
       return out;
     }
 
-    function buildMessage(form){
+    function openComposer(message){
+      const url = `https://wa.me/${DEST_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function buildLeadMessage(form){
       const fd = new FormData(form);
       const utm = getUTM();
 
@@ -1017,6 +1023,7 @@
       if (phone) lines.push(`Phone: ${phone}`);
       if (owed) lines.push(`Estimated Tax Debt: ${owed}`);
       lines.push(`SMS Consent: ${consent ? "Yes" : "No"}`);
+
       lines.push("");
       lines.push("Context");
       lines.push(`Page: ${location.href}`);
@@ -1030,11 +1037,28 @@
       return lines.join("\n");
     }
 
-    function openComposer(message){
-      const url = `https://wa.me/${DEST_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
+    function buildLearnMoreMessage(serviceName){
+      const utm = getUTM();
+      const lines = [];
+      lines.push("Service Inquiry — Anthem Tax Services");
+      lines.push("--------------------------------");
+      lines.push(`Service: ${serviceName || "Learn More"}`);
+      lines.push("");
+      lines.push("Context");
+      lines.push(`Page: ${location.href}`);
+      lines.push(`Title: ${document.title}`);
+      lines.push(`Time: ${new Date().toLocaleString()}`);
+      const utmKeys = Object.keys(utm);
+      if (utmKeys.length){
+        lines.push(`UTM: ${utmKeys.map(k => `${k}=${utm[k]}`).join("&")}`);
+      }
+      lines.push("");
+      lines.push("Please share details, eligibility, and next steps.");
+      return lines.join("\n");
     }
 
+    // Forms -> open composer with lead message
+    const forms = Array.from(document.querySelectorAll("form[id^='gform_']"));
     forms.forEach((form) => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -1057,7 +1081,7 @@
 
         setBtnState(form, "Submitting…", true);
         try{
-          const msg = buildMessage(form);
+          const msg = buildLeadMessage(form);
           openComposer(msg);
           form.reset();
           setBtnState(form, "Submitted ✓", true);
@@ -1069,6 +1093,16 @@
         }
       }, true);
     });
+
+    // Learn more -> single handler (service name + current page URL auto-included)
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest("a.learnMore[data-service]");
+      if (!a) return;
+      e.preventDefault();
+      const service = (a.getAttribute("data-service") || "").trim() || "Service Details";
+      const msg = buildLearnMoreMessage(service);
+      openComposer(msg);
+    }, true);
   })();
   </script>
 
